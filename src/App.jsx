@@ -1,20 +1,17 @@
 import './App.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Header from './layout/Header';
+import Footer from './layout/Footer';
+import PageContent from './layout/PageContent';
 
 function App() {
-  const notify = () => toast("Wow so easy!");
-
+  
   return (
     <>
-      {/*<div>
-        <button onClick={notify}>Notify!</button>
-        <ToastContainer />
-  </div>*/}
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-      <i class="fa-solid fa-user"></i>
+      <Header/>
+      <PageContent/>
+      <Footer/>
     </>
   )
 }
