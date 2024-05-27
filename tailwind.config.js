@@ -9,6 +9,9 @@ export default {
       colors: {
         'pgreen' : '#23856D',
         'secondtext' : '#737373',
+      },
+      minHeight: {
+        '616': '616rem',
       }
     },
   },
