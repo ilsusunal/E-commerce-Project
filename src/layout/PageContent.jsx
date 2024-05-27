@@ -1,10 +1,15 @@
-import { Router } from "react-router-dom"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import HomePage from "../pages/HomePage"
 
 export default function PageContent(){
-    Router
+
     return(
         <>
-        <div>PAGE CONTENT</div>
+        <Router>
+            <Switch>
+                <Route path="/" exact component={HomePage} />
+            </Switch>
+        </Router>
         </>
     )
 }
