@@ -8,6 +8,7 @@ export default {
     extend: {
       colors: {
         'pgreen' : '#23856D',
+        'secondtext' : '#737373',
       }
     },
   },
