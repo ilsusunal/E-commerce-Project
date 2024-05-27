@@ -9,9 +9,11 @@ function App() {
   
   return (
     <>
+    <main className=''>
       <Header/>
       <PageContent/>
       <Footer/>
+    </main>
     </>
   )
 }
