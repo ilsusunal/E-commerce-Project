@@ -1,4 +1,16 @@
+import { useState } from "react"
+
 export default function Header(){
+    const [hamburger, setHamburger] = useState(false);
+
+    const handleHamburger = ()=> {
+        if(!hamburger) {
+            setHamburger(true);
+        } else {
+            setHamburger(false);
+        }
+    }
+    
     return(
         <>
         <main className="grow justify-end w-full">
@@ -16,7 +28,7 @@ export default function Header(){
                     <a href="/"><i class="fa-brands fa-twitter"/></a>
                 </div>
             </section>
-            <section className="md:flex md:min-h-14 px-12 py-8 justify-between font-bold">
+            <section className="hidden md:flex md:min-h-14 px-12 py-8 justify-between font-bold">
                 <div className="md:flex items-center">
                     <h1 className="text-2xl">PazarYeri</h1>
                     <ul className="md:flex md:mx-16 md:space-x-4 text-secondtext">
@@ -26,11 +38,31 @@ export default function Header(){
                         <li><a href="/">Blog</a></li>
                         <li><a href="/">Contact</a></li>
                         <li><a href="/">Pages</a></li>
-                    </ul>
+                    </ul> 
                 </div>
-                <div>
-                    kayıt ol vb
+                <div className="text-sky-400 space-x-6">
+                    <button><i className="fa-regular fa-user mr-2"/>Login / Register</button>
+                    <button><i class="fa-solid fa-magnifying-glass"/></button>
+                    <button><i className="fa-solid fa-cart-shopping mr-2"/></button>
+                    <button><i className="fa-regular fa-heart mr-2"/></button>
                 </div>
+                
+            </section>
+            <section className="flex flex-col md:hidden p-8 font-bold">
+                <div className="flex justify-between">
+                    <h1 className="text-2xl">PazarYeri</h1>
+                    <div className="space-x-6">
+                        <button><i class="fa-solid fa-magnifying-glass"/></button>
+                        <button><i className="fa-solid fa-cart-shopping mr-2"/></button>
+                        <button onClick={handleHamburger}><i className="fa-solid fa-bars"/></button>
+                    </div>
+                </div>
+                {hamburger ? (<ul className="flex flex-col items-center justify-center text-secondtext text-xl gap-4 my-8">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/">Product</a></li>
+                    <li><a href="/">Pricing</a></li>
+                    <li><a href="/">Contact</a></li>
+                </ul>) : ''}
             </section>
         </main>
         
