@@ -2,8 +2,9 @@ export default function Header(){
     return(
         <>
         <main className="grow justify-end w-full">
-            <section className="hidden md:flex md:min-h-14 bg-pgreen text-white px-12 py-4">
-                contacts
+            <section className="hidden md:flex md:min-h-14 bg-pgreen text-white px-12 py-4 gap-8">
+                <p><i className="fa-solid fa-phone mr-2"/>(225) 555-0118</p>
+                <p><i className="fa-regular fa-envelope mr-2"/>michelle.rivera@example.com</p>
             </section>
             <section className="md:flex md:min-h-14 px-12 py-8 justify-between font-bold">
                 <div className="md:flex items-center">
