@@ -9,6 +9,8 @@ export default {
       colors: {
         'pgreen' : '#23856D',
         'secondtext' : '#737373',
+        'successText' : "#2DC071",
+        'baseText' : '#252B42'
       },
       minHeight: {
         '616': '616rem',

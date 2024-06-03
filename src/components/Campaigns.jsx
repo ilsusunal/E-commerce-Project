@@ -1,15 +1,53 @@
+import introCard1 from "../../public/introCard1.png";
+import introCard2 from "../../public/introCard2.png";
+import introCard3 from "../../public/introCard3.png";
+import introCard4 from "../../public/introCard4.png";
+
 export default function Campaigns(){
     return(
         <>
-        <section className="md:grid md:grid-cols-3 md:grid-rows-2 min-h-[616px] mx-auto">
-                <div className="md:col-span-1 md:row-span-2 bg-slate-600 m-2">
-                    <img src="" alt="" />
-                    <h1>FURNITURE</h1>
+        <main className="md:flex">
+            <section>
+                <div className=" bg-slate-600 m-2 relative">
+                <div className="font-bold p-4 absolute">
+                    <p className="text-successText">5 items</p>
+                    <h1 className="text-baseText text-2xl my-1">FURNITURE</h1>
+                    <button className="text-baseText ">Read more</button>
                 </div>
-                <div className="md:col-span-2 md:row-span-1 bg-slate-600 m-2">Card 2</div>
-                <div className="md:col-span-1 md:row-span-1 bg-slate-600 m-2">Card 3</div>
-                <div className="md:col-span-1 md:row-span-1 bg-slate-600 m-2">Card 4</div>
-        </section>
+                    <img src={introCard1} alt="Intro Image 1" />
+                </div>
+            </section>
+            
+            <section>
+            <div className=" bg-slate-600 m-2 relative">
+                <div className="font-bold p-4 absolute">
+                    <p className="text-successText text-xs">5 items</p>
+                    <h1 className="text-baseText text-lg">FURNITURE</h1>
+                    <button className="text-baseText text-xs">Read more</button>
+                </div>
+                <img src={introCard2} alt="Intro Image 2" />
+            </div>
+
+            <section className="md:flex">
+            <div className=" bg-slate-600 m-2 relative">
+                <div className="font-bold p-4 absolute">
+                    <p className="text-successText text-xs">5 items</p>
+                    <h1 className="text-baseText text-lg">FURNITURE</h1>
+                    <button className="text-baseText text-xs">Read more</button>
+                </div>
+                <img src={introCard3} alt="Intro Image 3" />
+            </div>
+            <div className=" bg-slate-600 m-2 relative">
+                <div className="font-bold p-4 absolute">
+                    <p className="text-successText text-xs">5 items</p>
+                    <h1 className="text-baseText text-lg">FURNITURE</h1>
+                    <button className="text-baseText text-xs">Read more</button>
+                </div>
+                <img src={introCard4} alt="Intro Image 4" />
+            </div>
+            </section>
+            </section>
+        </main>
         </>
     )
 }

@@ -6,7 +6,7 @@ export default function HomePage(){
     
     return(
         <>
-        <main className="flex md:flex-col  items-center md:max-w-6xl md:my-12">
+        <main className="flex md:max-w-4xl md:my-8 h-screen">
             <Campaigns/>
         </main>
         </>

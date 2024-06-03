@@ -1,7 +1,7 @@
 export default function Header(){
     return(
         <>
-        <main className="justify-end">
+        <main className="grow justify-end w-full">
             <section className="hidden md:flex md:min-h-14 bg-pgreen text-white px-12 py-4">
                 contacts
             </section>
