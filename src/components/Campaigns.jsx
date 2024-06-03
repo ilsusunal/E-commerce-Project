@@ -6,8 +6,8 @@ import introCard4 from "../../public/introCard4.png";
 export default function Campaigns(){
     return(
         <>
-        <main className="md:flex">
-            <section>
+        <main className="md:flex m-8 items-center">
+            <section className="h-40 w-auto md:h-full">
                 <div className=" bg-slate-600 m-2 relative">
                 <div className="font-bold p-4 absolute">
                     <p className="text-successText">5 items</p>
@@ -17,8 +17,7 @@ export default function Campaigns(){
                     <img src={introCard1} alt="Intro Image 1" />
                 </div>
             </section>
-            
-            <section>
+            <section className="h-40 w-auto md:h-full">
             <div className=" bg-slate-600 m-2 relative">
                 <div className="font-bold p-4 absolute">
                     <p className="text-successText text-xs">5 items</p>
@@ -28,7 +27,7 @@ export default function Campaigns(){
                 <img src={introCard2} alt="Intro Image 2" />
             </div>
 
-            <section className="md:flex">
+            <section className="h-40 w-auto md:h-full md:flex">
             <div className=" bg-slate-600 m-2 relative">
                 <div className="font-bold p-4 absolute">
                     <p className="text-successText text-xs">5 items</p>
