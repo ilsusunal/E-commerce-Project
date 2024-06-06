@@ -1,7 +1,7 @@
-import introCard1 from "../../public/introCard1.png";
-import introCard2 from "../../public/introCard2.png";
-import introCard3 from "../../public/introCard3.png";
-import introCard4 from "../../public/introCard4.png";
+import introCard1 from "/introCard1.png";
+import introCard2 from "/introCard2.png";
+import introCard3 from "/introCard3.png";
+import introCard4 from "/introCard4.png";
 
 export default function Campaigns(){
     return(
