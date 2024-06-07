@@ -2,7 +2,7 @@ import React, { useEffect } from "react"
 import Glide from "@glidejs/glide"
 import ProductCard2 from "./ProductCard2"
 
-export default function CarouselCard() {
+export default function CarouselCard({ products }) {
   useEffect(() => {
     const slider = new Glide(".glide-06", {
       type: "carousel",
@@ -38,9 +38,11 @@ export default function CarouselCard() {
         {/*    <!-- Slides --> */}
         <div className="overflow-hidden p-10" data-glide-el="track">
           <ul className="whitespace-no-wrap flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform] relative flex w-full overflow-hidden p-0">
-            <li>
-              <ProductCard2/>
-            </li>
+            {products.map(product => (
+              <li key={product.id}>
+                <ProductCard2 product={product} /> {/* Pass the product as a prop */}
+              </li>
+            ))}
           </ul>
         </div>
         {/*    <!-- Controls --> */}
