@@ -18,8 +18,8 @@ export default function Header(){
     
     return(
         <>
-        <main className="grow justify-end w-full">
-            <section className="hidden md:flex md:min-h-14 bg-pgreen text-white px-12 py-4 gap-8 justify-between">
+        <main className="md:grow justify-end w-full">
+            <section className="hidden md:flex md:min-h-10 bg-pgreen text-white px-12 py-4 gap-8 justify-between text-sm">
                 <div className="flex gap-4">
                     <p><i className="fa-solid fa-phone mr-2"/>(225) 555-0118</p>
                     <p><i className="fa-regular fa-envelope mr-2"/>michelle.rivera@example.com</p>
@@ -35,7 +35,7 @@ export default function Header(){
             </section>
             <section className="hidden md:flex md:min-h-14 px-12 py-8 justify-between font-bold">
                 <div className="md:flex items-center">
-                    <button className="text-2xl">PazarYeri</button>
+                    <button className="text-2xl"><a href="/">PazarYeri</a></button>
                     <ul className="md:flex md:mx-16 md:space-x-4 text-secondtext">
                         <li><a href="/">Home</a></li>
                         <li className="relative">
