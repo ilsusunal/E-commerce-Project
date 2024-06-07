@@ -6,7 +6,7 @@ import introCard4 from "/introCard4.png";
 export default function Campaigns(){
     return(
         <>
-        <main className="md:flex m-8 items-center">
+        <main className="md:flex items-center">
             <section className="h-40 w-auto md:h-full">
                 <div className=" bg-slate-600 m-2 relative">
                 <div className="font-bold p-4 absolute">

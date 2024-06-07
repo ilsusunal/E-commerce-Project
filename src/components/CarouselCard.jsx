@@ -34,7 +34,7 @@ export default function CarouselCard() {
   return (
     <>
       {/*<!-- Component: Card Carousel --> */}
-      <div className="glide-06 relative w-full overflow-hidden rounded bg-zinc-200 shadow-xl shadow-slate-200">
+      <div className="glide-06 relative w-full overflow-hidden rounded bg-zinc-200">
         {/*    <!-- Slides --> */}
         <div className="overflow-hidden p-10" data-glide-el="track">
           <ul className="whitespace-no-wrap flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform] relative flex w-full overflow-hidden p-0">

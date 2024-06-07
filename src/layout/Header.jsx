@@ -2,6 +2,7 @@ import { useState } from "react"
 
 export default function Header(){
     const [hamburger, setHamburger] = useState(false);
+    const [shopDropdown, setShopDropdown] = useState(false);
 
     const handleHamburger = ()=> {
         if(!hamburger) {
@@ -10,6 +11,10 @@ export default function Header(){
             setHamburger(false);
         }
     }
+
+    const toggleShopDropdown = () => {
+        setShopDropdown(!shopDropdown);
+    };
     
     return(
         <>
@@ -30,10 +35,60 @@ export default function Header(){
             </section>
             <section className="hidden md:flex md:min-h-14 px-12 py-8 justify-between font-bold">
                 <div className="md:flex items-center">
-                    <h1 className="text-2xl">PazarYeri</h1>
+                    <button className="text-2xl">PazarYeri</button>
                     <ul className="md:flex md:mx-16 md:space-x-4 text-secondtext">
                         <li><a href="/">Home</a></li>
-                        <li><a href="/">Shop</a></li>
+                        <li className="relative">
+                            <a href="/shop">Shop</a>
+                            <button onClick={toggleShopDropdown}><i class="fa-solid fa-chevron-down ml-2"/></button>
+                            {shopDropdown && (
+                                <div className="absolute left-0 top-full mt-2 bg-white text-black py-8 px-24 flex gap-8 w-max z-50">
+                                <div>
+                                    <h3 className="font-bold mb-2">Shop Layout</h3>
+                                    <ul className="font-semibold text-secondtext space-y-2 mt-4">
+                                        <li>Full Width</li>
+                                        <li>Sidebar Right</li>
+                                        <li>Sidebar Left</li>
+                                        <li>List View</li>
+                                        <li>Checkout</li>
+                                        <li>Card</li>
+                                        <li>Wishlist</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 className="font-bold mb-2">Product Layout</h4>
+                                    <ul className="font-semibold text-secondtext space-y-2 mt-4">
+                                        <li>Big Image Scrolling</li>
+                                        <li>Simple Product</li>
+                                        <li>Vertical Right</li>
+                                        <li>Vertical Left</li>
+                                        <li>Vertical Horizontal</li>
+                                        <li>Collection</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 className="font-bold mb-2">Product Type</h4>
+                                    <ul className="font-semibold text-secondtext space-y-2 mt-4">
+                                        <li>Simple Product</li>
+                                        <li>Vertical Product</li>
+                                        <li>Left Product</li>
+                                        <li>Right Product</li>
+                                        <li>Special Products</li>
+                                        <li>Outstock store</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 className="font-bold mb-2">Product Categories</h4>
+                                    <ul className="font-semibold text-secondtext space-y-2 mt-4">
+                                        <li>Bedroom</li>
+                                        <li>Outdoor</li>
+                                        <li>Decoration</li>
+                                        <li>Kitchen</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        )}
+                        </li>
                         <li><a href="/">About</a></li>
                         <li><a href="/">Blog</a></li>
                         <li><a href="/">Contact</a></li>

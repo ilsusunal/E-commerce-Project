@@ -8,10 +8,10 @@ export default function HomePage(){
     
     return(
         <>
-        <main className="md:max-w-4xl md:my-8 ">
+        <main className="md:max-w-5xl md:my-4">
             <Campaigns/>
             {/*<ProductCard/>*/}
-            <section>
+            <section className="my-16">
                 <CarouselCard/>
             </section>
         </main>
