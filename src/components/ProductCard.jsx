@@ -1,11 +1,14 @@
-export default function ProductCard(){
+import mockData from "../mockData"
+
+export default function ProductCard({ product }){
+  
     return(
         <>
         <div className="overflow-hidden rounded bg-white text-slate-500 shadow-md shadow-slate-200">
         {/*  <!-- Image --> */}
         <section>
           <img
-            src="https://picsum.photos/id/493/800/600"
+            src={product.image}
             alt="card image"
             className="aspect-video w-full"
           />
@@ -14,13 +17,12 @@ export default function ProductCard(){
         <div className="p-6">
           <header className="mb-4">
             <h3 className="text-xl font-medium text-slate-700">
-              Greek breakfast
+              {product.title}
             </h3>
-            <p className=" text-slate-400"> $8.99</p>
+            <p className=" text-slate-400">${product.price}</p>
           </header>
           <p>
-            Blueberry Superpower: Vanilla Greek Yogurt + Fresh Blueberries +
-            Granola + Honey.
+            {product.description}
           </p>
         </div>
         {/*  <!-- Action base sized basic button --> */}
