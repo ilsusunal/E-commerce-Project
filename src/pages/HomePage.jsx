@@ -6,7 +6,7 @@ import mockData from "../mockData"
 import Hero from "../components/Hero"
 
 export default function HomePage(){
-    const limitedData = mockData.slice(0, 4);
+    const limitedData = mockData.slice(0, 3);
     return(
         <>
         <main className="md:max-w-7xl md:my-4">
@@ -15,7 +15,8 @@ export default function HomePage(){
             <section className="hidden md:flex my-16">
                 <CarouselCard products={mockData}/>
             </section>
-            <section className="grow gap-4">
+            <Campaigns/>
+            <section className=" flex grow">
                 {limitedData.map(product => (
                     <ProductCard2 key={product.id} product={product} />
                 ))}

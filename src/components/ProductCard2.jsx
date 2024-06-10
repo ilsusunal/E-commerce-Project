@@ -3,9 +3,9 @@ import React from 'react';
 function ProductCard2({ product }) {
   return (
     <>
-    <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white">
+    <div className="rounded overflow-hidden w-64 bg-white border border-1 border-zinc-300">
       <div className="relative">
-        <img className="w-full" src={product.image} alt={product.title} />
+        <img className="w-full h-40" src={product.image} alt={product.title} />
         <span className="absolute top-0 left-0 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-br">
           NEW
         </span>
@@ -28,7 +28,7 @@ function ProductCard2({ product }) {
             {product.comments} comments
           </span>
         </div>
-        <a href="#" className="text-sky-400 font-semibold my-8 block">
+        <a href="#" className="text-sky-400 font-semibold my-4 block">
           Learn More
           <i className="fa-solid fa-chevron-right ml-4"/>
         </a>
