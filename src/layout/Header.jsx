@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useState } from "react";
+import IntroImg from "/drop-hero.jpg";
 
 export default function Header(){
     const [hamburger, setHamburger] = useState(false);
@@ -42,49 +43,48 @@ export default function Header(){
                             <a href="/shop">Shop</a>
                             <button onClick={toggleShopDropdown}><i class="fa-solid fa-chevron-down ml-2"/></button>
                             {shopDropdown && (
-                                <div className="absolute left-0 top-full mt-2 bg-white text-black py-8 px-24 flex gap-8 w-max z-50">
+                                <div className="absolute left-0 top-full mt-2 bg-white text-black py-8 px-48 flex gap-8 w-max z-50">
                                 <div>
-                                    <h3 className="font-bold mb-2">Shop Layout</h3>
+                                    <h3 className="font-bold mb-2">Women</h3>
                                     <ul className="font-semibold text-secondtext space-y-2 mt-4">
-                                        <li>Full Width</li>
-                                        <li>Sidebar Right</li>
-                                        <li>Sidebar Left</li>
-                                        <li>List View</li>
-                                        <li>Checkout</li>
-                                        <li>Card</li>
-                                        <li>Wishlist</li>
+                                        <li>Clothing</li>
+                                        <li>Shoes</li>
+                                        <li>Accessories</li>
+                                        <li>Beauty</li>
                                     </ul>
                                 </div>
                                 <div>
-                                    <h4 className="font-bold mb-2">Product Layout</h4>
+                                    <h4 className="font-bold mb-2">Men</h4>
                                     <ul className="font-semibold text-secondtext space-y-2 mt-4">
-                                        <li>Big Image Scrolling</li>
-                                        <li>Simple Product</li>
-                                        <li>Vertical Right</li>
-                                        <li>Vertical Left</li>
-                                        <li>Vertical Horizontal</li>
-                                        <li>Collection</li>
+                                        <li>Clothing</li>
+                                        <li>Shoes</li>
+                                        <li>Accessories</li>
+                                        <li>Grooming</li>
                                     </ul>
                                 </div>
                                 <div>
-                                    <h4 className="font-bold mb-2">Product Type</h4>
+                                    <h4 className="font-bold mb-2">Children</h4>
                                     <ul className="font-semibold text-secondtext space-y-2 mt-4">
-                                        <li>Simple Product</li>
-                                        <li>Vertical Product</li>
-                                        <li>Left Product</li>
-                                        <li>Right Product</li>
-                                        <li>Special Products</li>
-                                        <li>Outstock store</li>
+                                        <li>Clothing</li>
+                                        <li>Shoes</li>
+                                        <li>Accessories</li>
+                                        <li>Toys & Games</li>
+                                        <li>Nursery</li>
                                     </ul>
                                 </div>
                                 <div>
-                                    <h4 className="font-bold mb-2">Product Categories</h4>
+                                    <h4 className="font-bold mb-2">Furniture</h4>
                                     <ul className="font-semibold text-secondtext space-y-2 mt-4">
+                                        <li>Living Room</li>
                                         <li>Bedroom</li>
                                         <li>Outdoor</li>
-                                        <li>Decoration</li>
+                                        <li>Decoration & Storage</li>
                                         <li>Kitchen</li>
+                                        <li>Office</li>
                                     </ul>
+                                </div>
+                                <div>
+                                    <img src={IntroImg} alt="Product" className="h-full object-cover"/>
                                 </div>
                             </div>
                         )}
