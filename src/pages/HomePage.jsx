@@ -4,6 +4,7 @@ import Campaigns from "../components/Campaigns"
 import CarouselCard from "../components/CarouselCard"
 import mockData from "../mockData"
 import Hero from "../components/Hero"
+import CarouselCardFlash from "../components/CarouselCardFlash"
 
 export default function HomePage(){
     const limitedData = mockData.slice(0, 3);
@@ -15,11 +16,14 @@ export default function HomePage(){
             <section className="hidden md:flex my-16">
                 <CarouselCard products={mockData}/>
             </section>
-            <Campaigns/>
-            <section className=" flex grow">
+            <h1 className="text-2xl text-baseText font-semibold">Products</h1>
+            <section className="flex grow">
                 {limitedData.map(product => (
                     <ProductCard2 key={product.id} product={product} />
                 ))}
+            </section>
+            <section className="hidden md:flex my-16">
+                <CarouselCardFlash products={mockData}/>
             </section>
         </main>
         </>

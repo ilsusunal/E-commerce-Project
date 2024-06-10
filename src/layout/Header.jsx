@@ -20,7 +20,7 @@ export default function Header(){
     return(
         <>
         <main className="md:grow justify-end w-full">
-            <section className="hidden md:flex md:min-h-10 bg-pgreen text-white px-12 py-4 gap-8 justify-between text-sm">
+            <section className="hidden md:flex md:min-h-10 bg-darkbg text-white px-12 py-4 gap-8 justify-between text-sm">
                 <div className="flex gap-4">
                     <p><i className="fa-solid fa-phone mr-2"/>(225) 555-0118</p>
                     <p><i className="fa-regular fa-envelope mr-2"/>michelle.rivera@example.com</p>
