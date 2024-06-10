@@ -9,7 +9,7 @@ export default function HomePage(){
     const limitedData = mockData.slice(0, 4);
     return(
         <>
-        <main className="md:max-w-5xl md:my-4">
+        <main className="md:max-w-7xl md:my-4">
             <Hero/>
             {/*<ProductCard/>*/}
             <section className="hidden md:flex my-16">

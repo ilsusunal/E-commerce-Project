@@ -35,6 +35,11 @@ export default function CarouselCard({ products }) {
     <>
       {/*<!-- Component: Card Carousel --> */}
       <div className="relative glide-06  w-full overflow-hidden rounded bg-zinc-200">
+        <div className="flex justify-between px-8 p-4">
+          <h1 className="text-2xl text-baseText font-semibold ">Featured Products</h1>
+          <button>All Products! <i className="fa-solid fa-arrow-right"/></button>
+        </div>
+        
         {/*    <!-- Slides --> */}
         <div className="overflow-hidden p-10" data-glide-el="track">
           <ul className="whitespace-no-wrap flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform] relative flex w-full overflow-hidden p-0">
