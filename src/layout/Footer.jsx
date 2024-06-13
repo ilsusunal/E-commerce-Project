@@ -2,7 +2,7 @@ export default function Footer(){
     return(
         <>
         <main className="hidden w-full md:block text-white">
-            <section className="flex justify-around bg-zinc-800  py-8 px-48">
+            <section className="flex justify-around bg-darkbg  py-8 px-48">
                 <div>
                     <h2 className="font-semibold text-xl mb-8">PazarYeri</h2>
                     <ul className="space-y-4 font-light">

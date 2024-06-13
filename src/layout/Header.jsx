@@ -1,5 +1,6 @@
 import { useState } from "react";
 import IntroImg from "/drop-hero.jpg";
+import { Link } from "react-router-dom";
 
 export default function Header(){
     const [hamburger, setHamburger] = useState(false);
@@ -28,20 +29,20 @@ export default function Header(){
                 <p>Follow Us  and get a chance to win 80% off</p>
                 <div className="flex gap-4">
                     <p>Follow Us : </p>
-                    <a href="/"><i class="fa-brands fa-instagram"/></a>
-                    <a href="/"><i class="fa-brands fa-youtube"/></a>
-                    <a href="/"><i class="fa-brands fa-facebook"/></a>
-                    <a href="/"><i class="fa-brands fa-twitter"/></a>
+                    <a href="/"><i className="fa-brands fa-instagram"/></a>
+                    <a href="/"><i className="fa-brands fa-youtube"/></a>
+                    <a href="/"><i className="fa-brands fa-facebook"/></a>
+                    <a href="/"><i className="fa-brands fa-twitter"/></a>
                 </div>
             </section>
             <section className="hidden md:flex md:min-h-14 px-12 py-8 justify-between font-bold">
                 <div className="md:flex items-center">
-                    <button className="text-2xl"><a href="/">PazarYeri</a></button>
+                    <button className="text-2xl"><Link to="/">PazarYeri</Link></button>
                     <ul className="md:flex md:mx-16 md:space-x-4 text-secondtext">
-                        <li><a href="/">Home</a></li>
+                        <li><Link to="/">Home</Link></li>
                         <li className="relative">
-                            <a href="/shop">Shop</a>
-                            <button onClick={toggleShopDropdown}><i class="fa-solid fa-chevron-down ml-2"/></button>
+                            <Link to="/shop">Shop</Link>
+                            <button onClick={toggleShopDropdown}><i className="fa-solid fa-chevron-down ml-2"/></button>
                             {shopDropdown && (
                                 <div className="absolute left-0 top-full mt-2 bg-white text-black py-8 px-48 flex gap-8 w-max z-50">
                                 <div>
@@ -89,15 +90,15 @@ export default function Header(){
                             </div>
                         )}
                         </li>
-                        <li><a href="/">About</a></li>
-                        <li><a href="/">Blog</a></li>
-                        <li><a href="/">Contact</a></li>
-                        <li><a href="/">Pages</a></li>
+                        <li><Link to="/about">About</Link></li>
+                        <li><Link to="/blog">Blog</Link></li>
+                        <li><Link to="/contact">Contact</Link></li>
+                        <li><Link to="/pages">Pages</Link></li>
                     </ul> 
                 </div>
                 <div className="text-sky-400 space-x-6">
                     <button><i className="fa-regular fa-user mr-2"/>Login / Register</button>
-                    <button><i class="fa-solid fa-magnifying-glass"/></button>
+                    <button><i className="fa-solid fa-magnifying-glass"/></button>
                     <button><i className="fa-solid fa-cart-shopping mr-2"/></button>
                     <button><i className="fa-regular fa-heart mr-2"/></button>
                 </div>
@@ -107,13 +108,13 @@ export default function Header(){
                 <div className="flex justify-between">
                     <h1 className="text-2xl">PazarYeri</h1>
                     <div className="space-x-6">
-                        <button><i class="fa-solid fa-magnifying-glass"/></button>
+                        <button><i className="fa-solid fa-magnifying-glass"/></button>
                         <button><i className="fa-solid fa-cart-shopping mr-2"/></button>
                         <button onClick={handleHamburger}><i className="fa-solid fa-bars"/></button>
                     </div>
                 </div>
                 {hamburger ? (<ul className="flex flex-col items-center justify-center text-secondtext text-xl gap-4 my-8">
-                    <li><a href="/">Home</a></li>
+                    <li><Link to="/">Home</Link></li>
                     <li><a href="/">Product</a></li>
                     <li><a href="/">Pricing</a></li>
                     <li><a href="/">Contact</a></li>
