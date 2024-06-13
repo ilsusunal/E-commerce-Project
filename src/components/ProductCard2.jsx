@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function ProductCard2({ product }) {
   return (
@@ -28,10 +29,10 @@ function ProductCard2({ product }) {
             {product.comments} comments
           </span>
         </div>
-        <a href="#" className="text-sky-400 font-semibold my-4 block">
+        <Link to={`/product/${product.id}`} className="text-sky-400 font-semibold my-4 block">
           Learn More
           <i className="fa-solid fa-chevron-right ml-4"/>
-        </a>
+        </Link>
       </div>
     </div>
     </>
