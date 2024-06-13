@@ -15,6 +15,7 @@ export default function PageContent(){
             <Route path="/contact" exact component={ContactPage} />
             <Route path="/about" exact component={AboutPage} />
             <Route path="/blog" exact component={BlogPage} />
+            <Route path="/product" exact component={BlogPage} />
         </Switch>
         </>
     )

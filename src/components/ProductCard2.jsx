@@ -3,9 +3,9 @@ import React from 'react';
 function ProductCard2({ product }) {
   return (
     <>
-    <div className="rounded overflow-hidden w-72 bg-white border border-1 border-zinc-300">
+    <div className="flex md:block w-full rounded overflow-hidden w-72 bg-white border border-1 border-zinc-300">
       <div className="relative">
-        <img className="w-full h-40" src={product.image} alt={product.title} />
+        <img className="h-full md:w-full md:h-40" src={product.image} alt={product.title} />
         <span className="absolute top-0 left-0 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-br">
           NEW
         </span>
