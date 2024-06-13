@@ -3,67 +3,53 @@ import React from 'react'
 function ContactCard() {
   return (
     <>
-    <main className="grow flex items-center justify-center min-h-screen bg-gray-100">
-      <form className="bg-white p-6 rounded shadow-md w-full max-w-md">
-        <h2 className="text-2xl font-bold mb-4 text-center">Contact Us</h2>
-        <h3 className="text-xl mb-6 text-center">Make an Appointment</h3>
-        <div className="mb-4">
-          <label className="block mb-1 font-bold" htmlFor="fullName">Full Name *</label>
+    <main className="grow h-auto justify-end bg-white py-10 px-14 rounded-2xl border-2 w-full">
+        <h2 className="text-xl mb-4 text-center">Contact Us</h2>
+        <h3 className="text-2xl  font-bold  mb-6 text-center">Share Your Ideas</h3>
+        <form className="">
+        <div className="mb-4 md:flex md:gap-4">
           <input
             type="text"
             id="fullName"
-            className="w-full px-3 py-2 border border-gray-300 rounded"
+            className="w-full mb-4 md:mb-0 px-3 py-2 border border-gray-300 bg-stone-50 rounded"
             required
+            placeholder='Full Name *'
           />
-        </div>
-        <div className="mb-4">
-          <label className="block mb-1 font-bold" htmlFor="email">Email *</label>
-          <input
+            <input
             type="email"
             id="email"
-            className="w-full px-3 py-2 border border-gray-300 rounded"
+            className="w-full px-3 py-2 border border-gray-300 bg-stone-50 rounded"
             required
+            placeholder='Email *'
           />
         </div>
         <div className="mb-4">
-          <label className="block mb-1 font-bold" htmlFor="service">Service *</label>
           <select
-            id="service"
-            className="w-full px-3 py-2 border border-gray-300 rounded"
+            id="subject"
+            className="w-full px-3 py-2 border border-gray-300 bg-stone-50 rounded"
             required
+            placeholder="Subject *"
           >
             <option value="" disabled>Please Select</option>
-            <option value="Service 1">Service 1</option>
-            <option value="Service 2">Service 2</option>
-            <option value="Service 3">Service 3</option>
+            <option value="Subject 1">Recommendation</option>
+            <option value="Subject 2">Complaint</option>
           </select>
         </div>
-        <div className="mb-4">
-          <label className="block mb-1 font-bold" htmlFor="time">Time *</label>
-          <select
-            id="time"
-            className="w-full px-3 py-2 border border-gray-300 rounded"
-            required
-          >
-            <option value="" disabled>Select a Time</option>
-            <option value="4:00">4:00 Available</option>
-            <option value="5:00">5:00 Available</option>
-          </select>
-        </div>
-        <div className="mb-4">
-          <label className="block mb-1 font-bold" htmlFor="message">Message</label>
+        <div className="mb-4 flex flex-col items-center">
           <textarea
             id="message"
-            className="w-full px-3 py-2 border border-gray-300 rounded"
+            className="w-full px-3 py-2 border border-gray-300 bg-stone-50 rounded mb-8"
             rows="4"
+            placeholder='Message'
           ></textarea>
-        </div>
-        <button
+          <button
           type="submit"
-          className="w-full bg-blue-500 text-white px-3 py-2 rounded hover:bg-blue-700"
+          className="w-48 bg-sky-400 text-white px-3 py-2 rounded hover:bg-darkbg"
         >
-          Book Appointment
+          Send
         </button>
+        </div>
+        
       </form>
     </main>
 
