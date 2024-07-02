@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom/cjs/react-router-dom'
 
 function TeamCard() {
     const teamData = [
@@ -7,7 +8,7 @@ function TeamCard() {
             role: "Full Stack Developer",
             picture: "ilsu.png",
             phoneNumber: "",
-            linkedin: "",
+            linkedin: "https://www.linkedin.com/in/ilsu-sunal/",
             mail: "",
             about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
@@ -39,10 +40,10 @@ function TeamCard() {
         <img src={`/${m.picture}`} alt="" />
         <p className='font-semibold text-lg'>{m.fullName}</p>
         <p>{m.role}</p>
-        <div className="text-sky-400 space-x-6">
-            <button><i className="fa-brands fa-linkedin-in"/></button>
-            <button><i className="fa-regular fa-envelope"/></button>
-            <button><i className="fa-solid fa-phone"/></button>
+        <div className="text-sky-400 space-x-6 flex">
+            <a href={m.linkedin} ><i className="fa-brands fa-linkedin-in"/></a>
+            <a href={m.mail} ><i className="fa-regular fa-envelope"/></a>
+            <a href={m.phoneNumber} ><i className="fa-solid fa-phone"/></a>
         </div>
         <p>{m.about}</p>
     </div>
