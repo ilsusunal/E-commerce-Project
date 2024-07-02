@@ -93,7 +93,6 @@ export default function Header(){
                         <li><Link to="/about">About</Link></li>
                         <li><Link to="/blog">Blog</Link></li>
                         <li><Link to="/contact">Contact</Link></li>
-                        <li><Link to="/pages">Pages</Link></li>
                     </ul> 
                 </div>
                 <div className="text-sky-400 space-x-6">
