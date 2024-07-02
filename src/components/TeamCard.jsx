@@ -32,7 +32,7 @@ function TeamCard() {
     ]
   return (
     <>
-    <main className='md:flex mb-10'>
+    <main className='md:flex mb-24 space-y-4'>
     {teamData.map(m=>(
     <div key={m.id} className='flex flex-col items-center justify-between px-10'>
         <div className='bg-black rounded-full w-40 h-40 border-2'></div>
