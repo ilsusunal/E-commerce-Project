@@ -96,7 +96,7 @@ export default function Header(){
                     </ul> 
                 </div>
                 <div className="text-sky-400 space-x-6">
-                    <button><i className="fa-regular fa-user mr-2"/>Login / Register</button>
+                    <Link to="/signup"><i className="fa-regular fa-user mr-2"/>Login / Register</Link>
                     <button><i className="fa-solid fa-magnifying-glass"/></button>
                     <button><i className="fa-solid fa-cart-shopping mr-2"/></button>
                     <button><i className="fa-regular fa-heart mr-2"/></button>
