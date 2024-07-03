@@ -16,7 +16,9 @@ export default function Signup() {
       try {
         const response = await axios.get(`${baseURL}/roles`);
         setRoles(response.data);
-        setValue('role_id', 'customer');
+        if (response.data.length > 0) {
+            setValue('role_id', response.data.find(role => role.code === 'customer').id);
+        }
       } catch (err) {
         console.error('Error fetching roles:', err);
         setError('Error fetching roles. Please try again.');
