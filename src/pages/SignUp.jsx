@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
@@ -6,9 +6,24 @@ import { useHistory } from 'react-router-dom';
 const baseURL = 'https://workintech-fe-ecommerce.onrender.com';
 
 export default function Signup() {
-  const { register, handleSubmit, formState: { errors, isSubmitting }, watch } = useForm();
+  const { register, handleSubmit, formState: { errors, isSubmitting }, watch, setValue } = useForm();
   const [error, setError] = useState('');
+  const [roles, setRoles] = useState([]);
   const history = useHistory();
+
+  useEffect(() => {
+    const fetchRoles = async () => {
+      try {
+        const response = await axios.get(`${baseURL}/roles`);
+        setRoles(response.data);
+        setValue('role_id', 'customer');
+      } catch (err) {
+        console.error('Error fetching roles:', err);
+        setError('Error fetching roles. Please try again.');
+      }
+    };
+    fetchRoles();
+  }, [setValue]);
 
   const watchPassword = watch("password", "");
 
@@ -95,14 +110,14 @@ export default function Signup() {
             <span className="text-red-500">Passwords do not match</span>
           )}
         </div>
-        {/* Role selection */}
-        {/* Use useEffect or similar to fetch roles and populate a dropdown */}
-        {/* Example: */}
-        {/* <select {...register("role_id")} className="w-full px-3 py-2 border rounded">
-          <option value="customer">Customer</option>
-          <option value="admin">Admin</option>
-          <option value="store">Store</option>
-        </select> */}
+        <div className="mb-4">
+          <label className="block text-sm font-bold mb-2">Role</label>
+          <select {...register("role_id")} className="w-full px-3 py-2 border rounded">
+            {roles.map(role => (
+              <option key={role.id} value={role.id}>{role.name}</option>
+            ))}
+          </select>
+        </div>
         {/* Additional fields for store role if selected */}
         {/* Conditionally render based on selected role */}
         {/* Submit button with spinner */}
