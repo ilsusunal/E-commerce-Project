@@ -59,8 +59,13 @@ export default function Signup() {
   };
 
   return (
-    <div className="flex justify-center items-center mb-24">
-      <form onSubmit={handleSubmit(onSubmit)} className="w-full bg-sky-50 p-8">
+    <main className="mb-24">
+      <section className='flex flex-col items-center gap-4 mb-8'>
+        <h1 className="text-baseText text-2xl font-bold">Hello!</h1>
+        <p>Log in to PazarYeri or create an account, don't miss the discounts!</p>
+      </section>
+      <section>
+      <form onSubmit={handleSubmit(onSubmit)} className="w-full bg-sky-50 p-8 border-2 rounded-md">
         <h2 className="text-2xl font-bold mb-6">Sign Up</h2>
         {error && <p className="text-red-500 mb-4">{error}</p>}
         <div className="mb-4">
@@ -214,6 +219,7 @@ export default function Signup() {
           {isSubmitting ? 'Signing Up...' : 'Sign Up'}
         </button>
       </form>
-    </div>
+      </section>
+    </main>
   );
 }
