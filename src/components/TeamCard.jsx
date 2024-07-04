@@ -15,7 +15,7 @@ function TeamCard() {
         {   id: 2,
             fullName: "Erhan Fırat",
             role: "Project Owner",
-            picture: "erhan.png",
+            picture: "erhan.jpeg",
             phoneNumber: "",
             linkedin: "",
             mail: "",
@@ -24,7 +24,7 @@ function TeamCard() {
         {   id: 3,
             fullName: "Gökhan Özdemir",
             role: "Scrum Master",
-            picture: "gokhan.png",
+            picture: "gokhan.jpeg",
             phoneNumber: "",
             linkedin: "",
             mail: "",
@@ -33,19 +33,19 @@ function TeamCard() {
     ]
   return (
     <>
-    <main className='md:flex mb-24 space-y-4'>
+    <main className='md:flex mb-24'>
     {teamData.map(m=>(
     <div key={m.id} className='flex flex-col items-center justify-between px-10'>
-        <div className='bg-black rounded-full w-40 h-40 border-2'></div>
-        <img src={`/${m.picture}`} alt="" />
+        <div className='bg-black '></div>
+        <img src={`/${m.picture}`} alt="" className='rounded-full w-40 h-40 border-2 mb-2'/>
         <p className='font-semibold text-lg'>{m.fullName}</p>
-        <p>{m.role}</p>
-        <div className="text-sky-400 space-x-6 flex">
+        <p className='text-zinc-700'>{m.role}</p>
+        <div className="text-sky-400 space-x-6 flex mb-2">
             <a href={m.linkedin} ><i className="fa-brands fa-linkedin-in"/></a>
             <a href={m.mail} ><i className="fa-regular fa-envelope"/></a>
             <a href={m.phoneNumber} ><i className="fa-solid fa-phone"/></a>
         </div>
-        <p>{m.about}</p>
+        <p className='text-sm'>{m.about}</p>
     </div>
     ))}
     </main>

@@ -34,9 +34,9 @@ export default function CarouselCard({ products }) {
   return (
     <>
       {/*<!-- Component: Card Carousel --> */}
-      <div className="relative glide-06 m-4 w-full overflow-hidden rounded-lg bg-gradient-to-b from-zinc-200  to-white">
+      <div className="relative glide-06 m-4 w-full overflow-hidden rounded-lg bg-gradient-to-b from-blue-200  to-green-200">
         <div className="flex justify-between px-10 pt-6">
-          <h1 className="text-2xl text-baseText font-semibold ">New Products</h1>
+          <h1 className="text-2xl text-baseText font-semibold ">Flash Sale <i className="fa-solid fa-bolt  ml-2"/></h1>
           <button className="underline underline-offset-8">All Products! <i className="fa-solid fa-arrow-right"/></button>
         </div>
         

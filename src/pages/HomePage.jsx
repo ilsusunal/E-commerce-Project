@@ -14,9 +14,7 @@ export default function HomePage(){
         <main className="md:max-w-7xl md:my-4">
             <Hero/>
             {/*<ProductCard/>*/}
-            <section className="hidden md:flex my-16">
-                <CarouselCard products={mockData}/>
-            </section>
+            
             <h1 className="text-2xl text-center my-12 text-baseText font-semibold">Featured Products</h1>
             <section className="p-4">
                 <div className="md:flex justify-between gap-4 mb-4 space-y-4 md:space-y-0">
@@ -31,7 +29,7 @@ export default function HomePage(){
                 </div>
             </section>
             <section className="hidden md:flex my-16">
-                <CarouselCardFlash products={mockData}/>
+                <CarouselCard products={mockData}/>
             </section>
         </main>
         </>
