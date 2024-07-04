@@ -65,16 +65,16 @@ export default function Signup() {
         <p>Log in to PazarYeri or create an account, don't miss the discounts!</p>
       </section>
       <section>
-      <form onSubmit={handleSubmit(onSubmit)} className="w-full bg-sky-50 p-8 border-2 rounded-md">
+      <form onSubmit={handleSubmit(onSubmit)} className="w-full bg-white py-10 px-10 rounded-2xl border-2">
         <h2 className="text-2xl font-bold mb-6">Sign Up</h2>
         {error && <p className="text-red-500 mb-4">{error}</p>}
         <div className="mb-4">
-          <label className="block text-sm font-bold mb-2">Username</label>
           <input
             type="text"
             name="username"
             {...register("username", { required: true, minLength: 3 })}
-            className="w-full px-3 py-2 border rounded"
+            className="w-full mb-4 md:mb-0 px-3 py-2 border border-gray-300 bg-stone-50 rounded"
+            placeholder='Username *'
             required
           />
           {errors.username && errors.username.type === "required" && (
@@ -85,12 +85,12 @@ export default function Signup() {
           )}
         </div>
         <div className="mb-4">
-          <label className="block text-sm font-bold mb-2">Email</label>
           <input
             type="email"
             name="email"
             {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
-            className="w-full px-3 py-2 border rounded"
+            className="w-full mb-4 md:mb-0 px-3 py-2 border border-gray-300 bg-stone-50 rounded"
+            placeholder='Email *'
             required
           />
           {errors.email && errors.email.type === "required" && (
@@ -101,7 +101,6 @@ export default function Signup() {
           )}
         </div>
         <div className="mb-4">
-          <label className="block text-sm font-bold mb-2">Password</label>
           <input
             type="password"
             name="password"
@@ -109,7 +108,8 @@ export default function Signup() {
               required: true,
               minLength: 8,
               pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,}$/ })}
-            className="w-full px-3 py-2 border rounded"
+            className="w-full mb-4 md:mb-0 px-3 py-2 border border-gray-300 bg-stone-50 rounded"
+            placeholder='Password *'
             required
           />
           {errors.password && errors.password.type === "required" && (
@@ -125,12 +125,12 @@ export default function Signup() {
           )}
         </div>
         <div className="mb-4">
-          <label className="block text-sm font-bold mb-2">Confirm Password</label>
           <input
             type="password"
             name="confirmPassword"
             {...register("confirmPassword", { validate: (value) => value === watchPassword })}
-            className="w-full px-3 py-2 border rounded"
+            className="w-full mb-4 md:mb-0 px-3 py-2 border border-gray-300 bg-stone-50 rounded"
+            placeholder='Confirm Password *'
             required
           />
           {errors.confirmPassword && (
@@ -138,8 +138,8 @@ export default function Signup() {
           )}
         </div>
         <div className="mb-4">
-          <label className="block text-sm font-bold mb-2">Role</label>
-          <select {...register("role_id")} className="w-full px-3 py-2 border rounded">
+          <select {...register("role_id")} className="w-full mb-4 md:mb-0 px-3 py-2 border border-gray-300 bg-stone-50 rounded"
+          placeholder='Full Name *'>
             {roles.map(role => (
               <option key={role.id} value={role.id}>{role.name}</option>
             ))}
@@ -149,12 +149,12 @@ export default function Signup() {
         {watchRole && roles.find(role => role.id === parseInt(watchRole))?.code === 'store' && (
           <>
             <div className="mb-4">
-              <label className="block text-sm font-bold mb-2">Store Name</label>
               <input
                 type="text"
                 name="store_name"
                 {...register("store_name", { required: true, minLength: 3 })}
-                className="w-full px-3 py-2 border rounded"
+                className="w-full mb-4 md:mb-0 px-3 py-2 border border-gray-300 bg-stone-50 rounded"
+                placeholder='Store Name *'
                 required
               />
               {errors.store_name && errors.store_name.type === "required" && (
@@ -165,12 +165,12 @@ export default function Signup() {
               )}
             </div>
             <div className="mb-4">
-              <label className="block text-sm font-bold mb-2">Store Phone</label>
               <input
                 type="tel"
                 name="store_phone"
                 {...register("store_phone", { required: true, pattern: /^(\+90|0)?5\d{9}$/ })}
-                className="w-full px-3 py-2 border rounded"
+                className="w-full mb-4 md:mb-0 px-3 py-2 border border-gray-300 bg-stone-50 rounded"
+                placeholder='Store Phone *'
                 required
               />
               {errors.store_phone && errors.store_phone.type === "required" && (
@@ -181,12 +181,12 @@ export default function Signup() {
               )}
             </div>
             <div className="mb-4">
-              <label className="block text-sm font-bold mb-2">Store Tax ID</label>
               <input
                 type="text"
                 name="tax_no"
                 {...register("tax_no", { required: true, pattern: /^T\d{4}V\d{6}$/ })}
-                className="w-full px-3 py-2 border rounded"
+                className="w-full mb-4 md:mb-0 px-3 py-2 border border-gray-300 bg-stone-50 rounded"
+                placeholder='Store Tax ID *'
                 required
               />
               {errors.tax_no && errors.tax_no.type === "required" && (
@@ -197,12 +197,12 @@ export default function Signup() {
               )}
             </div>
             <div className="mb-4">
-              <label className="block text-sm font-bold mb-2">Store Bank Account</label>
               <input
                 type="text"
                 name="bank_account"
                 {...register("bank_account", { required: true, pattern: /^TR\d{24}$/ })}
-                className="w-full px-3 py-2 border rounded"
+                className="w-full mb-4 md:mb-0 px-3 py-2 border border-gray-300 bg-stone-50 rounded"
+                placeholder='Store Bank Account *'
                 required
               />
               {errors.bank_account && errors.bank_account.type === "required" && (
@@ -215,7 +215,7 @@ export default function Signup() {
           </>
         )}
         {/* Submit button */}
-        <button type="submit" disabled={isSubmitting} className={`w-full bg-blue-500 text-white py-2 rounded ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}>
+        <button type="submit" disabled={isSubmitting} className={`w-full bg-sky-400 text-white px-3 py-2 rounded hover:bg-darkbg ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}>
           {isSubmitting ? 'Signing Up...' : 'Sign Up'}
         </button>
       </form>
