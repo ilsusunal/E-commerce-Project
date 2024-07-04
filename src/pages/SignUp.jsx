@@ -28,11 +28,31 @@ export default function Signup() {
   }, [setValue]);
 
   const watchPassword = watch("password", "");
+  const watchRole = watch("role_id");
 
   const onSubmit = async (data) => {
+    setError('');
+    let formattedData = {
+      name: data.name,
+      email: data.email,
+      password: data.password,
+      role_id: data.role_id
+    };
+    if (roles.find(role => role.id === parseInt(data.role_id))?.code === 'store') {
+      formattedData.store = {
+        name: data.store_name,
+        phone: data.store_phone,
+        tax_no: data.tax_no,
+        bank_account: data.bank_account
+      };
+    }
+    console.log('Data being sent:', formattedData);
     try {
-      await axios.post(`${baseURL}/signup`, data);
-      history.push('/login');
+      await axios.post(`${baseURL}/signup`, formattedData);
+      history.push({
+        pathname: history.location.state?.from || '/',
+        state: { message: 'You need to click the link in the email to activate your account!' }
+      });
     } catch (err) {
       setError('Error signing up. Please try again.');
     }
@@ -121,8 +141,75 @@ export default function Signup() {
           </select>
         </div>
         {/* Additional fields for store role if selected */}
-        {/* Conditionally render based on selected role */}
-        {/* Submit button with spinner */}
+        {watchRole && roles.find(role => role.id === parseInt(watchRole))?.code === 'store' && (
+          <>
+            <div className="mb-4">
+              <label className="block text-sm font-bold mb-2">Store Name</label>
+              <input
+                type="text"
+                name="store_name"
+                {...register("store_name", { required: true, minLength: 3 })}
+                className="w-full px-3 py-2 border rounded"
+                required
+              />
+              {errors.store_name && errors.store_name.type === "required" && (
+                <span className="text-red-500">Store Name is required</span>
+              )}
+              {errors.store_name && errors.store_name.type === "minLength" && (
+                <span className="text-red-500">Store Name must be at least 3 characters</span>
+              )}
+            </div>
+            <div className="mb-4">
+              <label className="block text-sm font-bold mb-2">Store Phone</label>
+              <input
+                type="tel"
+                name="store_phone"
+                {...register("store_phone", { required: true, pattern: /^(\+90|0)?5\d{9}$/ })}
+                className="w-full px-3 py-2 border rounded"
+                required
+              />
+              {errors.store_phone && errors.store_phone.type === "required" && (
+                <span className="text-red-500">Store Phone is required</span>
+              )}
+              {errors.store_phone && errors.store_phone.type === "pattern" && (
+                <span className="text-red-500">Store Phone must be a valid Türkiye phone number</span>
+              )}
+            </div>
+            <div className="mb-4">
+              <label className="block text-sm font-bold mb-2">Store Tax ID</label>
+              <input
+                type="text"
+                name="tax_no"
+                {...register("tax_no", { required: true, pattern: /^T\d{4}V\d{6}$/ })}
+                className="w-full px-3 py-2 border rounded"
+                required
+              />
+              {errors.tax_no && errors.tax_no.type === "required" && (
+                <span className="text-red-500">Store Tax ID is required</span>
+              )}
+              {errors.tax_no && errors.tax_no.type === "pattern" && (
+                <span className="text-red-500">Store Tax ID must match the pattern “TXXXXVXXXXXX”</span>
+              )}
+            </div>
+            <div className="mb-4">
+              <label className="block text-sm font-bold mb-2">Store Bank Account</label>
+              <input
+                type="text"
+                name="bank_account"
+                {...register("bank_account", { required: true, pattern: /^TR\d{24}$/ })}
+                className="w-full px-3 py-2 border rounded"
+                required
+              />
+              {errors.bank_account && errors.bank_account.type === "required" && (
+                <span className="text-red-500">Store Bank Account is required</span>
+              )}
+              {errors.bank_account && errors.bank_account.type === "pattern" && (
+                <span className="text-red-500">Store Bank Account must be a valid IBAN address</span>
+              )}
+            </div>
+          </>
+        )}
+        {/* Submit button */}
         <button type="submit" disabled={isSubmitting} className={`w-full bg-blue-500 text-white py-2 rounded ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}>
           {isSubmitting ? 'Signing Up...' : 'Sign Up'}
         </button>
