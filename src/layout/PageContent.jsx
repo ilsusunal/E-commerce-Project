@@ -6,6 +6,7 @@ import AboutPage from '../pages/AboutPage';
 import BlogPage from '../pages/BlogPage';
 import ProductPage from '../pages/ProductPage';
 import Signup from "../pages/SignUp";
+import LoginPage from "../pages/LoginPage";
 
 
 export default function PageContent(){
@@ -20,6 +21,7 @@ export default function PageContent(){
             <Route path="/blog" exact component={BlogPage} />
             <Route path="/product/:id" exact component={ProductPage} />
             <Route path="/signup" component={Signup} />
+            <Route path="/login" component={LoginPage} />
         </Switch>
         </>
     )

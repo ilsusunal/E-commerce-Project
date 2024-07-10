@@ -62,7 +62,7 @@ export default function Signup() {
     <main className="mb-24">
       <section className='flex flex-col items-center gap-4 mb-8'>
         <h1 className="text-baseText text-2xl font-bold">Hello!</h1>
-        <p>Log in to PazarYeri or create an account, don't miss the discounts!</p>
+        <p>Login to PazarYeri or create an account, don't miss the discounts!</p>
       </section>
       <section>
       <form onSubmit={handleSubmit(onSubmit)} className="w-full bg-white py-10 px-10 rounded-2xl border-2">
