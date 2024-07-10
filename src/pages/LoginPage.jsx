@@ -1,21 +1,22 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
-import { toast } from 'react-toastify';
-import { login } from '../store/thunks';
+import { useHistory, useLocation } from 'react-router-dom';
+import { loginUser } from '../store/thunks';
 
 const LoginPage = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const dispatch = useDispatch();
     const history = useHistory();
-
+    const location = useLocation();
+    const { from } = location.state || { from: { pathname: '/' } };
+  
     const onSubmit = (data) => {
-        dispatch(login(data, history));
+      dispatch(loginUser(data, history, from));
     };
 
     return (
-        <main className="mb-24">
+        <main className="mb-24 mx-4">
             <section className='flex flex-col items-center gap-4 mb-8'>
                 <h1 className="text-baseText text-2xl font-bold">Welcome Back!</h1>
             </section>
@@ -24,7 +25,7 @@ const LoginPage = () => {
                     <div className="mb-4">
                         <input
                             type="email"
-                            {...register('email', { required: true })}
+                            {...register('email', { required: true, pattern: /^\S+@\S+$/i })}
                             className="w-full mb-4 md:mb-0 px-3 py-2 border border-gray-300 bg-stone-50 rounded"
                             placeholder='Email *'
                         />

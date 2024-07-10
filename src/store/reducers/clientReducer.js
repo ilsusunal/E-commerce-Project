@@ -5,6 +5,7 @@ const initialState = {
     roles: [],
     theme: '',
     language: '',
+    fetchState: 'NOT_FETCHED',
   };
   
   const clientReducer = (state = initialState, action) => {
@@ -17,6 +18,8 @@ const initialState = {
         return { ...state, theme: action.payload };
       case 'SET_LANGUAGE':
         return { ...state, language: action.payload };
+      case 'SET_FETCH_STATE':
+        return { ...state, fetchState: action.payload };
       default:
         return state;
     }

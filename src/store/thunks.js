@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { setRoles, setFetchState } from './actions/clientActions';
+import { toast } from 'react-toastify';
 
 export const fetchRoles = () => {
   return async (dispatch, getState) => {
@@ -19,29 +20,25 @@ export const fetchRoles = () => {
   };
 };
 
-export const login = (data, history) => {
+export const loginUser = (data, history, from) => {
   return async (dispatch) => {
     try {
       const response = await axios.post('https://workintech-fe-ecommerce.onrender.com/login', {
         email: data.email,
         password: data.password,
       });
-      const user = response.data;
 
-      if (data.rememberMe) {
-        localStorage.setItem('token', user.token);
-      }
-
-      {/*const gravatarUrl = gravatar.url(user.email, { s: '200', d: 'identicon' });
-      user.avatar = gravatarUrl;*/}
-
+      const { user, token } = response.data;
       dispatch(setUser(user));
 
-      const previousPage = history.location.state?.from || '/';
-      history.push(previousPage);
+      if (data.rememberMe) {
+        localStorage.setItem('token', token);
+      }
+
+      history.replace(from);
+      toast.success('Successfully logged in!');
     } catch (error) {
-      console.error('Login failed:', error);
-      toast.error('Login failed. Please check your email and password.');
+      toast.error('Login failed!');
     }
   };
 };

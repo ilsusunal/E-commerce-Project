@@ -59,7 +59,7 @@ export default function Signup() {
   };
 
   return (
-    <main className="mb-24">
+    <main className="mb-24 mx-4">
       <section className='flex flex-col items-center gap-4 mb-8'>
         <h1 className="text-baseText text-2xl font-bold">Hello!</h1>
         <p>Login to PazarYeri or create an account, don't miss the discounts!</p>
