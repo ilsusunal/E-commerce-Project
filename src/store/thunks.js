@@ -38,7 +38,9 @@ export const loginUser = (data, history, from) => {
       history.replace(from);
       toast.success('Successfully logged in!');
     } catch (error) {
-      toast.error('Login failed!');
+      console.error('Login failed:', error);
+      const errorMessage = error.response?.data?.message || 'Login failed!';
+      toast.error(errorMessage);
     }
   };
 };
