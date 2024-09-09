@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ContactCard() {
+function ContactForm() {
   return (
     <>
     <main className="grow h-auto justify-end bg-white py-10 px-14 rounded-2xl border-2 w-full">
@@ -57,4 +57,4 @@ function ContactCard() {
   )
 }
 
-export default ContactCard
+export default ContactForm

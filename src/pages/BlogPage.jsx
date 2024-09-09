@@ -1,5 +1,5 @@
 import React from 'react'
-import BlogCard from '../components/BlogCard'
+import BlogCard from '../components/cards/BlogCard'
 
 function BlogPage() {
   return (

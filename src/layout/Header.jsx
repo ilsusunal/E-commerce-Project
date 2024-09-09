@@ -44,7 +44,7 @@ export default function Header(){
                             <Link to="/shop">Shop</Link>
                             <button onClick={toggleShopDropdown}><i className="fa-solid fa-chevron-down ml-2"/></button>
                             {shopDropdown && (
-                                <div className="absolute left-0 top-full mt-2 bg-white text-black py-8 px-48 flex gap-8 w-max z-50">
+                                <div className="absolute left-0 top-full mt-2 bg-white text-black py-8 px-24 flex gap-8 w-max z-50 shadow-lg">
                                 <div>
                                     <h3 className="font-bold mb-2">Women</h3>
                                     <ul className="font-semibold text-secondtext space-y-2 mt-4">

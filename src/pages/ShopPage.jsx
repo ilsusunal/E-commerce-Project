@@ -1,4 +1,4 @@
-import ProductCard from "../components/ProductCard";
+import ProductCard from "../components/cards/ProductCard";
 import mockData from "../mockData";
 
 export default function ShopPage(){

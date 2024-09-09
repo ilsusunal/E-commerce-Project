@@ -1,10 +1,13 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
-import ProductCard2 from "../components/ProductCard2"
-import Campaigns from "../components/Campaigns"
+import ProductCard2 from "../components/cards/ProductCard2"
 import CarouselCard from "../components/CarouselCard"
 import mockData from "../mockData"
 import Hero from "../components/Hero"
-import CarouselCardFlash from "../components/CarouselCardFlash"
+import Clients from "/desktop-clients.png";
+import BestSellers from "../components/BestSellers"
+import FeaturedProducts from "../components/FeaturedProducts"
+import BestServices from "../components/BestServices"
+import FeaturedPosts from "../components/FeaturedPosts"
 
 export default function HomePage(){
     const limitedData = mockData.slice(0, 4);
@@ -14,8 +17,8 @@ export default function HomePage(){
         <main className="md:max-w-7xl md:my-4">
             <Hero/>
             {/*<ProductCard/>*/}
-            
-            <h1 className="text-2xl text-center my-12 text-baseText font-semibold">Featured Products</h1>
+            <img src={Clients} alt="Clients" className="w-full h-auto my-24 hidden md:block" />
+            <BestSellers/>
             <section className="p-4">
                 <div className="md:flex justify-between gap-4 mb-4 space-y-4 md:space-y-0">
                 {limitedData.map(product => (
@@ -28,9 +31,9 @@ export default function HomePage(){
                 ))}
                 </div>
             </section>
-            <section className="hidden md:flex my-16">
-                <CarouselCard products={mockData}/>
-            </section>
+            <FeaturedProducts/>
+            <BestServices/>
+            <FeaturedPosts/>
         </main>
         </>
     )

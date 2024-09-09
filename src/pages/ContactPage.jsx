@@ -1,5 +1,5 @@
 import React from 'react'
-import ContactCard from '../components/ContactCard'
+import ContactForm from '../components/ContactForm'
 
 function ContactPage() {
     
@@ -11,7 +11,7 @@ function ContactPage() {
             <p>Need to get in touch with us? Either fill out the form with your inquiry or find the department email above the page.</p>
         </section>
         <section className='flex-1'>
-            <ContactCard/>
+          <ContactForm/>
         </section>
     </main>
     </>
