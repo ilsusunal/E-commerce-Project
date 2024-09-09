@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import ProductCard2 from "../components/cards/ProductCard2"
-import CarouselCard from "../components/CarouselCard"
+import CarouselCard from "../components/Carousel"
 import mockData from "../mockData"
 import Hero from "../components/Hero"
 import Clients from "/desktop-clients.png";
